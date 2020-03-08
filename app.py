@@ -28,7 +28,7 @@ def create_cupcake():
     rating = request.json['rating']
     image = request.json['image']
 
-    new_cupcake = Cupcake(flavor=flavor, size=size, rating=rating, image=image)
+    new_cupcake = Cupcake(flavor=flavor, size=size, rating=rating, image=image or None)
     db.session.add(new_cupcake)
     db.session.commit()
 
